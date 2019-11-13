@@ -1,0 +1,40 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+         "location": {
+            "type": "string",
+            "defaultValue": "[resourceGroup().location]"
+        }
+    },
+    "variables": {
+        "uniquePublicIPAddressName": "[concat('IP', uniqueString(resourceGroup().id))]",
+        "dnsNameLabel": "dns1"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2019-09-01",
+            "name": "[concat(variables('uniquePublicIPAddressName'))]",
+            "location": "[parameters('location')]",
+            "sku": {
+                "name": "Basic"
+            },
+            "properties": {
+                "publicIPAddressVersion": "IPv4",
+                "publicIPAllocationMethod": "Dynamic",
+                "idleTimeoutInMinutes": 4,
+                "ipTags": [],
+                "dnsSettings":{
+                    "domainNameLabel": "[concat(variables('dnsNameLabel'), uniqueString(resourceGroup().id))]"
+                }
+            }
+        }
+    ],
+    "outputs": {
+  "PublicIpResourceId": {
+    "type": "string",
+    "value": "[resourceId('Microsoft.Network/virtualNetworks',variables('uniquePublicIPAddressName'))]"
+  }
+}
+}
