@@ -25,7 +25,9 @@
                 "publicIPAllocationMethod": "Dynamic",
                 "idleTimeoutInMinutes": 4,
                 "ipTags": [],
-                "domainNameLabel": "[concat(variables('dnsNameLabel'), uniqueString(resourceGroup().id))]"
+                "dnsSettings":{
+                    "domainNameLabel": "[concat(variables('dnsNameLabel'), uniqueString(resourceGroup().id))]"
+                }   
             }
         }
     ],
