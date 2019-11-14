@@ -16,7 +16,7 @@
         {
             "type": "Microsoft.Network/publicIPAddresses",
             "apiVersion": "2019-09-01",
-            "name": "[concat(parameters('IpAddressName'))]",
+            "name": "[concat(parameters('IpAddressName'), uniqueString(resourceGroup().id))]",
             "location": "[parameters('location')]",
             "sku": {
                 "name": "Basic"
@@ -35,7 +35,7 @@
     "outputs": {
   "PublicIpResourceId": {
     "type": "object",
-    "value": "[reference(parameters('IpAddressName'))]"   
+    "value": "[reference(parameters('IpAddressName'))]"
   }
 }
 }
