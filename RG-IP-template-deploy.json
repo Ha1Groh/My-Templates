@@ -35,7 +35,7 @@
         "outputs": {
   "IpName": {
     "type": "string",
-    "value": "[reference(parameters('IpAddressName')).properties.dnsSettings.domainNameLabel]"   
+    "value": "[reference(concat('Microsoft.Network/publicIPAddresses', parameters('IpAddressName'))).properties.dnsSettings.domainNameLabel]" 
   }
 }
 }
