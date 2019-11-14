@@ -5,7 +5,7 @@
          "location": {
             "type": "string"
         },
-        "IPAddressName": {
+        "IpAddressName": {
             "type": "string"
         },
         "dnsNameLabel": {
@@ -35,7 +35,7 @@
     "outputs": {
   "PublicIpResourceId": {
     "type": "string",
-    "value": "[reference(parameters('IPAddressName')).publicIPAddresses]"   
+    "value": "[reference(parameters('IpAddressName')).publicIPAddresses]"   
   }
 }
 }
