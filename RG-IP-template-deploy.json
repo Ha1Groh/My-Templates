@@ -23,7 +23,7 @@
             },
             "properties": {
                 "publicIPAddressVersion": "IPv4",
-                "publicIPAllocationMethod": "Dynamic",
+                "publicIPAllocationMethod": "Static",
                 "idleTimeoutInMinutes": 4,
                 "ipTags": [],
                 "dnsSettings":{
@@ -35,7 +35,7 @@
         "outputs": {
   "IpName": {
     "type": "string",
-    "value": "[reference(concat('Microsoft.Network/publicIPAddresses/', parameters('IpAddressName'))).properties.dnsSettings.domainNameLabel]" 
+    "value": "[reference(parameters('IpAddressName')).ipAddress]"
   }
 }
 }
