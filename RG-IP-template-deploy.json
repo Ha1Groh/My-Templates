@@ -35,7 +35,7 @@
         "outputs": {
   "IpName": {
     "type": "string",
-    "value": "123"   
+    "value": "[reference(parameters('IpAddressName')).properties.dnsSettings.domainNameLabel]"   
   }
 }
 }
