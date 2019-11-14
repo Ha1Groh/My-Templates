@@ -35,7 +35,7 @@
     "outputs": {
   "PublicIpResourceId": {
     "type": "object",
-    "value": "[reference(parameters('IpAddressName'))]"
+    "value": "[reference(parameters('IpAddressName')).properties.publicIPAddresses]"
   }
 }
 }
