@@ -31,11 +31,5 @@
                 }
             }
         }
-    ],
-        "outputs": {
-  "IpAddress": {
-    "type": "string",
-    "value": "[reference(parameters('IpAddressName')).ipAddress]"
-  }
-}
+    ]
 }
