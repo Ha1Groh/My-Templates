@@ -1,0 +1,2 @@
+  New-AzResourceGroupDeployment `
+  -ResourceGroupName RG `
