@@ -1,0 +1,11 @@
+pool:
+  name: Hosted Windows 2019 with VS2019
+  demands: azureps
+
+steps:
+- task: AzurePowerShell@3
+  inputs:
+    azureSubscription: 'demo-deploy-sp'
+    ScriptPath: 'https://raw.githubusercontent.com/Ha1Groh/My-Templates/master/RG-deploy1.ps1'
+    ScriptArguments: -ResourceGroupName 'RG' -ResourceGroupLocation 'westeurope'
+    azurePowerShellVersion: LatestVersion
