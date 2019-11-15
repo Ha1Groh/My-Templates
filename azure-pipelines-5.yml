@@ -1,0 +1,10 @@
+pool:
+  name: Hosted Windows 2019 with VS2019
+  demands: azureps
+
+steps:
+- task: AzurePowerShell@3
+  inputs:
+    azureSubscription: '37772f19-68df-4eb5-bc19-01d5b045bfd4'
+
+    azurePowerShellVersion: LatestVersion
