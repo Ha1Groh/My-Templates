@@ -1,12 +1,15 @@
 
+trigger:
+- master
+
 pool:
-  name: Hosted Windows 2019 with VS2019
-  demands: azureps
+  vmImage: 'ubuntu-latest'
 
 steps:
-- task: AzurePowerShell@3
-  inputs:
-    azureSubscription: '37772f19-68df-4eb5-bc19-01d5b045bfd4'
-    ScriptPath: 'https://csb37772f1968dfx4eb5xbc1.blob.core.windows.net/case2-deploy/RG-deploy.ps1'
-    ScriptArguments: -ResourceGroupName 'RG' -ResourceGroupLocation 'westeurope'
-    azurePowerShellVersion: LatestVersion
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
