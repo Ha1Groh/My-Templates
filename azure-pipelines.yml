@@ -5,7 +5,7 @@ pool:
 steps:
 - task: AzurePowerShell@3
   inputs:
-    azureSubscription: 'demo-deploy-sp'
+    azureSubscription: '37772f19-68df-4eb5-bc19-01d5b045bfd4'
     ScriptPath: 'https://raw.githubusercontent.com/Ha1Groh/My-Templates/master/RG-deploy1.ps1'
     ScriptArguments: -ResourceGroupName 'RG' -ResourceGroupLocation 'westeurope'
     azurePowerShellVersion: LatestVersion
