@@ -4,12 +4,11 @@ trigger:
 pool:
   vmImage: "vs2017-win2016"
 
+steps:
 - task: AzureResourceGroupDeployment@1
-  displayName: 'Deploy template'
   inputs:
-    deploymentScope: 'Resource Group'
-    ConnectedServiceName: 'deploy-vm'
-    subscriptionName: '37772f19-68df-4eb5-bc19-01d5b045bfd4'
+    ConnectedServiceName: 'Azure Pass - Sponsorship(37772f19-68df-4eb5-bc19-01d5b045bfd4)'
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'RG'
     location: 'West Europe'
+    deploymentMode: 'Incremental'
