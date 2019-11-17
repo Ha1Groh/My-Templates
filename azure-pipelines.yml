@@ -1,20 +1,12 @@
 
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- master
-
 pool:
-  vmImage: 'ubuntu-latest'
+  name: Hosted Windows 2019 with VS2019
+  demands: azureps
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: AzurePowerShell@3
+  inputs:
+    azureSubscription: 'demo-deploy-sp'
+    ScriptPath: 'https://csb37772f1968dfx4eb5xbc1.blob.core.windows.net/case2-deploy/RG-deploy.ps1'
+    ScriptArguments: -ResourceGroupName 'RG' -ResourceGroupLocation 'westeurope'
+    azurePowerShellVersion: LatestVersion
