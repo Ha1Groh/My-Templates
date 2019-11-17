@@ -11,4 +11,6 @@ steps:
     action: 'Create Or Update Resource Group'
     resourceGroupName: 'RG'
     location: 'West Europe'
+    csmFile: 'https://csb37772f1968dfx4eb5xbc1.blob.core.windows.net/devops-case2/RGresource-deploy-template.json'
+    csmParametersFile: 'https://csb37772f1968dfx4eb5xbc1.blob.core.windows.net/devops-case2/RGresource-deploy-parameters.json'
     deploymentMode: 'Incremental'
