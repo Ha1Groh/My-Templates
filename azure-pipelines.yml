@@ -7,3 +7,4 @@ steps:
   inputs:
     resourceGroupName: 'RG'
     location: 'West Europe'
+    ScriptPath: 'https://raw.githubusercontent.com/Ha1Groh/My-Templates/master/RG-deploy1.ps1'
