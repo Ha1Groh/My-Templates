@@ -9,8 +9,6 @@ steps:
   inputs:
     ConnectedServiceName: 'Azure Pass - Sponsorship(37772f19-68df-4eb5-bc19-01d5b045bfd4)'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'RG'
-    location: 'West Europe'
-    csmFile: 'https://raw.githubusercontent.com/Ha1Groh/My-Templates/master/RGresource-deploy-template.json'
-    csmParametersFile: 'https://raw.githubusercontent.com/Ha1Groh/My-Templates/master/RGresource-deploy-parameters.json'
+    ScriptArguments: -ResourceGroupName 'RG' -ResourceGroupLocation 'westeurope'
     deploymentMode: 'Incremental'
+    azurePowerShellVersion: LatestVersion
