@@ -1,10 +1,20 @@
-pool:
-  name: Hosted Windows 2019 with VS2019
 
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
 
 steps:
-- task: AzureResourceGroupDeployment@1
-  inputs:
-    resourceGroupName: 'RG'
-    location: 'West Europe'
-    ScriptPath: 'https://raw.githubusercontent.com/Ha1Groh/My-Templates/master/RG-deploy1.ps1'
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
