@@ -6,7 +6,7 @@ pool:
 steps:
 - task: AzurePowerShell@3
   inputs:
-    azureSubscription: 'demo-deploy-sp'
+    azureSubscription: 'Azure Pass - Sponsorship'
     ScriptPath: 'https://csb37772f1968dfx4eb5xbc1.blob.core.windows.net/case2-deploy/RG-deploy.ps1'
     ScriptArguments: -ResourceGroupName 'RG' -ResourceGroupLocation 'westeurope'
     azurePowerShellVersion: LatestVersion
